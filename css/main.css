@@ -7,6 +7,7 @@ font-family: 'Montserrat', sans-serif;*/
   --main-bg-color: #1a1830;
   --card-bg-color: #262348;
   --main-text-color: #d45a00;
+  --time-color: #7ce80f;
   --white: white;
 }
 
@@ -18,11 +19,21 @@ body {
 
 header {
   font-size: 3em;
-  font-weight: 500;
+  font-weight: 700;
+  filter: drop-shadow(0 0 0.5rem var(--main-text-color));
   text-align: center;
   padding: 1em;
   color: var(--main-text-color);
+  background-image: url(/images/edgar-chaparro-Lwx-q6OdGAc-unsplash.jpg);
 }
+
+.main-title {
+  filter: drop-shadow(0 0 1rem var(--main-bg-color));
+  text-shadow: 2px 2px var(--main-bg-color);
+  font-family: "Besley";
+}
+
+/* img tag needed for image to center within the card  */
 
 /* Style the tab */
 .tab {
@@ -31,7 +42,7 @@ header {
 
 /* Style the buttons inside the tab */
 .tab button {
-  width: 14.28571428571429vw;
+  width: 14vw;
   background-color: var(--main-bg-color);
   color: var(--white);
   float: left;
@@ -40,7 +51,8 @@ header {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 30px;
+  font-size: 20px;
+  font-family: "Montserrat";
 }
 
 /* Change background color of buttons on hover */
@@ -56,4 +68,147 @@ header {
 
 /* Style the tab content */
 .tabcontent {
+  padding: 2rem;
+}
+
+.bar-grid {
+  display: grid;
+  gap: 1.9rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/*  */
+
+.bar-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg-color);
+  color: var(--white);
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.bar-card:hover {
+  transform: scale(1.1);
+  color: var(--main-text-color);
+}
+
+/*  transition can be used more creatively, maybe the cards could transition into a lighter/darker shade when hover is active 
+    margin font-size can all be played with until we come to an agreement.
+*/
+
+h3 {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.bar-card-name {
+  margin-top: 0.5rem;
+  font-size: 1.8rem;
+  transition: all 500ms;
+}
+
+/*-- add this property to bar-card instead--.bar-card-name:hover {
+  color: var(--main-text-color);
+}*/
+
+.bar-card-day {
+  word-spacing: 0.6rem;
+  margin: 0.3rem 0 0.4rem 0;
+  font-size: 0.8rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+.bar-card-time {
+  color: var(--time-color);
+  margin: 0.6rem 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.bar-card-icon-price {
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+  margin: 1rem;
+}
+
+.bar-card-icon {
+  margin-bottom: 0.6rem;
+  height: 3rem;
+}
+
+.bar-card-price {
+  display: block;
+  color: var(--main-text-color);
+  font-size: 0.9rem;
+}
+
+.bar-card-img {
+  margin-top: 0.5rem;
+  height: 70%;
+  width: 90%;
+}
+
+.card-img-size {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.bar-card-address {
+  font-size: 1rem;
+  margin: 1rem;
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--main-text-color);
+  font-weight: lighter;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.full-text {
+  display: inline-block;
+}
+
+.short-text {
+  display: none;
+}
+
+.shortest-text {
+  display: none;
+}
+
+@media (max-width: 955px) {
+  .short-text {
+    display: inline-block;
+  }
+  .full-text {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .shortest-text {
+    display: inline-block;
+  }
+
+  .short-text {
+    display: none;
+  }
+  .full-text {
+    display: none;
+  }
 }
